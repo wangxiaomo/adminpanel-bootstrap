@@ -35,7 +35,7 @@
             </li>
             <li class="messages-menu">
               <a href="/logout">
-                <i class="fa fa-lock"></i>
+                <i class="fa fa-lock"></i>注销登录
               </a>
             </li>
           </ul>
