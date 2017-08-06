@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/login', function() {
-    return view('login');
+Route::get('/', function() {
+    return redirect('/admin');
 });
 
-Route::get('/', function () {
-    return view('base');
+Route::get('/login',  'LoginController@index');
+Route::post('/login', 'LoginController@login');
+
+Route::group([
+    'namespace' =>  'Admin',
+    'prefix'    =>  'admin',
+], function(){
+    // admin dashboard
+    Route::get('/', 'AdminController@index');
 });
