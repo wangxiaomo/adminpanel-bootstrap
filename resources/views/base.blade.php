@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>@yield('page_title') - Admin</title>
+  <title>@yield('page_title') - AdminPanel</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
@@ -16,44 +16,39 @@
     <header class="main-header">
       <a href="../../index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini"><b>AdP</b></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+        <span class="logo-lg"><b>Admin</b>Panel</span>
       </a>
       <nav class="navbar navbar-static-top" role="navigation">
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
+
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <li class="user user-menu">
+              <a href="#">
+                <img src="u.jpg" class="user-image" alt="User Image">
+                <span class="hidden-xs">{{ request()->admin_user->name }}</span>
+              </a>
+            </li>
+            <li class="messages-menu">
+              <a href="/logout">
+                <i class="fa fa-lock"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
     <aside class="main-sidebar">
-      <section class="sidebar">
-        <ul class="sidebar-menu tree" data-widget="tree">
-          <li class="header">Header</li>
-          <li class="active"><a href="#"><i class="fa fa-link"></i><span>link</span></a></li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i><span>Multi</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-            <ul class="treeview-menu" style="display:none">
-              <li><a href="#">link</a></li>
-              <li><a href="#">link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </section>
+      @yield('sidebar')
     </aside>
 
     <div class="content-wrapper">
-      <section class="content-header">
-        <h1>Page Header<small>Optional description</small></h1>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-          <li class="active">Here</li>
-        </ol>
-      </section>
-      <section class="content container-fluid">
-        | Your Page Content Here |
-      </section>
+      @yield('content')
     </div>
 
     <footer class="main-footer">
@@ -69,5 +64,6 @@
   <script src="bower_components/AdminLTE/dist/js/app.min.js"></script>
   -->
   <script src="js/adminlte.min.js"></script>
+  @include('mods.common')
 </body>
-</html>
+</html
