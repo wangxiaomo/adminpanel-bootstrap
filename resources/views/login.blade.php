@@ -15,30 +15,36 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="#"><b>Admin</b>LTE</a>
+      <a href="#"><b>Admin</b>Panel</a>
     </div>
     <div class="login-box-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">
+        @if (session('msg'))
+          <span style="color:red">{{ session('msg') }}</span>
+        @else
+          请在此处登录
+        @endif
+      </p>
       <form action="" method="post">
         {{ csrf_field() }}
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" name="email">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" name="password">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
           <div class="col-xs-8">
             <div class="checkbox icheck">
               <label>
-                <input type="checkbox"> Remember Me
+                <input type="checkbox"> 记住我?
               </label>
             </div>
           </div>
           <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
           </div>
         </div>
       </form>
