@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>@yield('page_title') - Admin</title>
+  <title>登录 - Admin</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="bower_components/AdminLTE/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="bower_components/AdminLTE/dist/css/skins/skin-blue.min.css">
   <link rel="stylesheet" href="bower_components/iCheck/skins/square/blue.css">
+  <link rel="stylesheet" href="/bower_components/form.validation/dist/css/formValidation.min.css">
 </head>
 <body class="hold-transition login-page">
   <div class="login-box">
@@ -25,14 +26,16 @@
           请在此处登录
         @endif
       </p>
-      <form action="" method="post">
+      <form action="" method="post" data-fv-addons="i18n">
         {{ csrf_field() }}
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" placeholder="Email" name="email">
+          <input type="email" class="form-control" placeholder="Email" name="email"
+              data-fv-notempty="true" data-fv-emailaddress="true">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password" name="password">
+          <input type="password" class="form-control" placeholder="Password" name="password"
+              data-fv-notempty="true">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
@@ -53,11 +56,12 @@
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
-  <!--
-  <script src="bower_components/AdminLTE/dist/js/app.min.js"></script>
-  -->
   <script src="js/adminlte.min.js"></script>
   <script src="bower_components/iCheck/icheck.min.js"></script>
+  <script src="/bower_components/form.validation/dist/js/formValidation.min.js"></script>
+  <script src="/bower_components/form.validation/dist/js/framework/bootstrap.min.js"></script>
+  <script src="/js/i18n.min.js"></script>
+  <script src="/bower_components/form.validation/dist/js/language/zh_CN.js"></script>
   <script>
   $(function () {
     $('input').iCheck({
@@ -65,6 +69,7 @@
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
+    $('form').formValidation('setLocale', 'zh_CN');
   });
   </script>
 </body>
