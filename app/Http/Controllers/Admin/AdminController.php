@@ -21,6 +21,16 @@ class AdminController extends Controller {
     }
 
     public function create_user() {
+        if(request()->isMethod('post')){
+            $data = request()->all();
+            $is_unvalid = AdminUser::check_user_data($data['name'], $data['email']);
+            if($is_unvalid){
+                return view('admin.users.create', ['data'=>$data, 'msg'=>$is_unvalid]);
+            }else{
+                $u = AdminUser::add($data);
+                return view('admin.users.create', ['msg' => '创建成功']);
+            }
+        }
         return view('admin.users.create');
     }
 }

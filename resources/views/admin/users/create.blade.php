@@ -23,32 +23,33 @@
   <section class="content container-fluid">
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">新建</h3>
+        <h3 class="box-title">新建
+          @isset($msg)<span class="alert-danger" style="margin-left:15px;">{{ $msg }}</span>@endisset</h3>
       </div>
       <form role="form" method="post" data-fv-addons="i18n">
         {{ csrf_field() }}
         <div class="box-body">
           <div class="form-group">
             <label>管理员类型</label>
-            <select class="form-control">
-              <option value="0">超级管理员</option>
-              <option value="1">审核人员</option>
-              <option value="2">操作员</option>
+            <select class="form-control" name="admin_type">
+              <option value="0" @isset($data){{ $data['admin_type'] == 0? 'selected': '' }}@endisset>超级管理员</option>
+              <option value="1" @isset($data){{ $data['admin_type'] == 1? 'selected': '' }}@endisset>审核人员</option>
+              <option value="2" @isset($data){{ $data['admin_type'] == 2? 'selected': '' }}@endisset>操作员</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="name">用户名</label>
+            <label for="name">用户名(长度4-15位)</label>
             <input type="text" class="form-control" name="name" placeholder="" data-fv-notempty="true"
-              data-fv-stringlength="true" data-fv-stringlength-max="15" data-fv-stringlength-min="5" data-fv-stringlength-message="长度需在5-15位之间">
+              data-fv-stringlength="true" data-fv-stringlength-max="15" data-fv-stringlength-min="4" value="@isset($data){{ $data['name'] }}@endisset">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" placeholder="" data-fv-notempty="true" data-fv-emailaddress="true">
+            <input type="email" class="form-control" name="email" placeholder="" data-fv-notempty="true" data-fv-emailaddress="true" value="@isset($data){{ $data['email'] }}@endisset">
           </div>
           <div class="form-group">
-            <label for="password">密码</label>
+            <label for="password">密码(长度7-15位)</label>
             <input type="password" class="form-control" name="password" placeholder="" data-fv-notempty="true"
-              data-fv-stringlength="true" data-fv-stringlength-max="15" data-fv-stringlength-min="7" data-fv-stringlength-message="长度需在7-15位之间">
+              data-fv-stringlength="true" data-fv-stringlength-max="15" data-fv-stringlength-min="7">
           </div>
           <div class="form-group">
             <label for="r_password">再次输入密码</label>

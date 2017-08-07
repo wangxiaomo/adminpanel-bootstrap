@@ -38,4 +38,21 @@ class AdminUser extends Model {
             case AdminUser::WORKER:      return '操作员';
         }
     }
+
+    public static function check_user_data($name, $email) {
+        $u = AdminUser::where('name', $name)->first();
+        if($u) return '用户名已被占用!';
+        $u = AdminUser::where('email', $email)->first();
+        if($u) return 'Email已被占用!';
+    }
+
+    public static function add($data) {
+        $u = AdminUser::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => md5($data['password']),
+            'admin_type' => $data['admin_type']
+        ]);
+        return $u;
+    }
 }
