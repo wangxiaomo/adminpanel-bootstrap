@@ -35,8 +35,8 @@
                 <td>{{ $u->email }}</td>
                 <td>{{ $u->role() }}</td>
                 <td>
-                  <span class="btn-link" data-id="{{ $u->id }}">编辑</span> |
-                  <span class="btn-link" data-id="{{ $u->id }}">删除</span>
+                  <a class="btn-link" href="/admin/users/{{ $u->id }}/edit">编辑</a> |
+                  <a class="btn-link">删除</a>
                 </td>
               </tr>
             @endforeach

@@ -33,4 +33,26 @@ class AdminController extends Controller {
         }
         return view('admin.users.create');
     }
+
+    public function edit_user($id) {
+        $u = AdminUser::findOrFail($id);
+        if(request()->isMethod('post')){
+            $data = request()->all();
+            $u->admin_type = $data['admin_type'];
+            $u->name = $data['name'];
+            $u->email = $data['email'];
+            $is_unvalid = AdminUser::check_user_data($u->name, $u->email, $u->id);
+            if($is_unvalid){
+                return view('admin.users.edit', ['user'=>$u, 'msg'=>$is_unvalid]);
+            }else{
+                $u->save();
+                return view('admin.users.edit', ['user'=>$u, 'msg' => '修改成功']);
+            }
+        }
+        return view('admin.users.edit', ['user' => $u]);
+    }
+
+    public function delete_user($id) {
+
+    }
 }

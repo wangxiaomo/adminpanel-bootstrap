@@ -39,11 +39,11 @@ class AdminUser extends Model {
         }
     }
 
-    public static function check_user_data($name, $email) {
+    public static function check_user_data($name, $email, $id=null) {
         $u = AdminUser::where('name', $name)->first();
-        if($u) return '用户名已被占用!';
+        if($u && $u->id != $id) return '用户名已被占用!';
         $u = AdminUser::where('email', $email)->first();
-        if($u) return 'Email已被占用!';
+        if($u && $u->id != $id) return 'Email已被占用!';
     }
 
     public static function add($data) {
