@@ -25,4 +25,17 @@ class AdminUser extends Model {
         $u = AdminUser::find($id);
         return $u;
     }
+
+    public static function get_all() {
+        $users = AdminUser::all();
+        return $users;
+    }
+
+    public function role() {
+        switch($this->admin_type) {
+            case AdminUser::SUPER_ADMIN: return '超级管理员';
+            case AdminUser::SUPERVISOR:  return '审核人员';
+            case AdminUser::WORKER:      return '操作员';
+        }
+    }
 }

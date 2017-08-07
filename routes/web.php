@@ -24,5 +24,9 @@ Route::group([
     'prefix'    =>  'admin',
 ], function(){
     // admin dashboard
-    Route::get('/', 'AdminController@index');
+    Route::get('/', 'AdminController@dashboard');
+
+    // admin users
+    Route::get('/users', 'AdminController@users');
+    Route::any('/users/create', 'AdminController@create_user');
 });

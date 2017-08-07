@@ -10,7 +10,7 @@
 
 @section('content')
   <section class="content-header">
-    <h1>Page Header<small>Optional description</small></h1>
+    <h1>Dashboard<small>在这里可以看到整个系统的概况</small></h1>
     <ol class="breadcrumb">
       <li class="active">Dashboard</li>
     </ol>

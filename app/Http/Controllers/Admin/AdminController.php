@@ -11,7 +11,16 @@ class AdminController extends Controller {
         $this->middleware('need_admin_login');
     }
 
-    public function index() {
+    public function dashboard() {
         return view('admin.dashboard');
+    }
+
+    public function users() {
+        $users = AdminUser::get_all();
+        return view('admin.users.index', ['users' => $users]);
+    }
+
+    public function create_user() {
+        return view('admin.users.create');
     }
 }
