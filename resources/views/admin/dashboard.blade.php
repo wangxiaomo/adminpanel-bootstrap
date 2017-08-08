@@ -17,13 +17,28 @@
   </section>
   <section class="content container-fluid">
     <div class="row">
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box">
-          <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
-          <div class="info-box-content">
-            <span class="info-box-text">Likes</span>
-            <span class="info-box-number">93,139</span>
+      <div class="col-lg-3 col-xs-6">
+        <div class="small-box bg-red">
+          <div class="inner">
+            <h3>&nbsp;</h3>
+            <p>管理员</p>
           </div>
+          <div class="icon">
+            <i class="ion ion-person-add"></i>
+          </div>
+          <a href="/admin/users" class="small-box-footer">点击查看<i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-xs-6">
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3>&nbsp;</h3>
+            <p>数据</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-stats-bars"></i>
+          </div>
+          <a href="#" class="small-box-footer">点击查看<i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
     </div>
