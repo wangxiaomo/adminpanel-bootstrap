@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('page_title')
-  Update Password
+  修改密码
 @endsection
 
 @section('page_header')
@@ -14,23 +14,23 @@
 
 @section('content')
   <section class="content-header">
-    <h1>Update Password</h1>
+    <h1>&nbsp;</h1>
     <ol class="breadcrumb">
-      <li>Profile</li>
-      <li class="active">Password</li>
+      <li>账号信息</li>
+      <li class="active">修改密码</li>
     </ol>
   </section>
   <section class="content container-fluid">
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">update password
+        <h3 class="box-title">修改密码
           @isset($msg)<span class="alert-danger" style="margin-left:15px;">{{ $msg }}</span>@endisset</h3>
       </div>
       <form role="form" method="post" data-fv-addons="i18n">
         {{ csrf_field() }}
         <div class="box-body">
           <div class="form-group">
-            <label for="password">Old Password</label>
+            <label for="password">旧密码</label>
             <input type="password" class="form-control" name="old_password" placeholder="" data-fv-notempty="true"
               data-fv-stringlength="true" data-fv-stringlength-max="15" data-fv-stringlength-min="7">
           </div>

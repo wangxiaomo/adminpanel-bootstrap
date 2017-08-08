@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('page_title')
-  Update Profile
+  修改个人信息
 @endsection
 
 @section('page_header')
@@ -14,16 +14,16 @@
 
 @section('content')
   <section class="content-header">
-    <h1>Update Profile</h1>
+    <h1>&nbsp;</h1>
     <ol class="breadcrumb">
-      <li>Profile</li>
-      <li class="active">Edit</li>
+      <li>账号信息</li>
+      <li class="active">修改个人信息</li>
     </ol>
   </section>
   <section class="content container-fluid">
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">编辑
+        <h3 class="box-title">修改
           @isset($msg)<span class="alert-danger" style="margin-left:15px;">{{ $msg }}</span>@endisset</h3>
       </div>
       <form role="form" method="post" data-fv-addons="i18n">

@@ -12,12 +12,8 @@ class AdminUserController extends Controller {
         $this->middleware('need_super_admin');
     }
 
-    public function dashboard() {
-        return view('admin.dashboard');
-    }
-
     public function users() {
-        $users = AdminUser::get_all();
+        $users = AdminUser::paginate(20);
         return view('admin.users.index', ['users' => $users]);
     }
 

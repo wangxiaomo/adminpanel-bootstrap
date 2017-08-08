@@ -14,7 +14,7 @@
 
 @section('content')
   <section class="content-header">
-    <h1>管理员信息管理</h1>
+    <h1>&nbsp;</h1>
     <ol class="breadcrumb">
       <li>管理员信息</li>
       <li class="active">管理员信息管理</li>
@@ -46,6 +46,11 @@
             @endforeach
           </tbody>
         </table>
+      </div>
+      <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+          {{ $users->links('mods.pagination') }}
+        </ul>
       </div>
     </div>
   </section>

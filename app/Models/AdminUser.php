@@ -26,11 +26,6 @@ class AdminUser extends Model {
         return $u;
     }
 
-    public static function get_all() {
-        $users = AdminUser::all();
-        return $users;
-    }
-
     public function role() {
         switch($this->admin_type) {
             case AdminUser::SUPER_ADMIN: return '超级管理员';
@@ -60,9 +55,9 @@ class AdminUser extends Model {
         if($this->password == md5($old)){
             $this->password = md5($new);
             $this->save();
-            return 'update success';
+            return '修改成功';
         }else{
-            return 'not changed';
+            return '修改失败，请重新尝试';
         }
     }
 }
