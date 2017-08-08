@@ -16,8 +16,26 @@
           <li class="{{ $item == 'create'?'active':'' }}"><a href="/admin/users/create"><i class="fa fa-circle-o"></i>新建管理员</a></li>
         </ul>
       </li>
+      <li class="treeview {{ $parent == 'profile'?'active':'' }}">
+        <a href="#"><i class="fa fa-user-o"></i><span>Profile</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu" style="{{ $parent == 'profile'? '':'display:none' }}">
+          <li class="{{ $item == 'edit'?'active':'' }}"><a href="/admin/profile/edit"><i class="fa fa-circle-o"></i>update profile</a></li>
+          <li class="{{ $item == 'password'?'active':'' }}"><a href="/admin/profile/password"><i class="fa fa-circle-o"></i>update password</a></li>
+        </ul>
+      </li>
     </ul>
   </section>
 @else
-  2
+  <section class="sidebar">
+    <ul class="sidebar-menu tree" data-widget="tree">
+      <li class="{{ $parent == 'dashboard'?'active':'' }}"><a href="/admin"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+      <li class="treeview {{ $parent == 'profile'?'active':'' }}">
+        <a href="#"><i class="fa fa-user-o"></i><span>Profile</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu" style="{{ $parent == 'profile'? '':'display:none' }}">
+          <li class="{{ $item == 'edit'?'active':'' }}"><a href="/admin/profile/edit"><i class="fa fa-circle-o"></i>update profile</a></li>
+          <li class="{{ $item == 'password'?'active':'' }}"><a href="/admin/profile/password"><i class="fa fa-circle-o"></i>update password</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 @endif

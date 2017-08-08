@@ -31,4 +31,8 @@ Route::group([
     Route::any('/users/create', 'AdminUserController@create_user');
     Route::any('/users/{id}/edit', 'AdminUserController@edit_user');
     Route::post('/users/{id}/delete', 'AdminUserController@delete_user');
+
+    // admin profile
+    Route::any('/profile/edit', 'ProfileController@edit');
+    Route::any('/profile/password', 'ProfileController@password');
 });

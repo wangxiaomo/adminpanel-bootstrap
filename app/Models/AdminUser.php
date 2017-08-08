@@ -55,4 +55,14 @@ class AdminUser extends Model {
         ]);
         return $u;
     }
+
+    public function update_password($old, $new) {
+        if($this->password == md5($old)){
+            $this->password = md5($new);
+            $this->save();
+            return 'update success';
+        }else{
+            return 'not changed';
+        }
+    }
 }
