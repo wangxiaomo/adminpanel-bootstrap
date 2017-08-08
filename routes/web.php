@@ -24,11 +24,11 @@ Route::group([
     'prefix'    =>  'admin',
 ], function(){
     // admin dashboard
-    Route::get('/', 'AdminController@dashboard');
+    Route::get('/', 'DashboardController');
 
     // admin users
-    Route::get('/users', 'AdminController@users');
-    Route::any('/users/create', 'AdminController@create_user');
-    Route::any('/users/{id}/edit', 'AdminController@edit_user');
-    Route::post('/users/{id}/delete', 'AdminController@delete_user');
+    Route::get('/users', 'AdminUserController@users');
+    Route::any('/users/create', 'AdminUserController@create_user');
+    Route::any('/users/{id}/edit', 'AdminUserController@edit_user');
+    Route::post('/users/{id}/delete', 'AdminUserController@delete_user');
 });

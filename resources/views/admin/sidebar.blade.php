@@ -5,8 +5,6 @@
   $item = count($r) > 1?$r[1]:'';
 @endphp
 
-{{ $active }}
-
 @if (request()->admin_user->admin_type == \App\Models\AdminUser::SUPER_ADMIN)
   <section class="sidebar">
     <ul class="sidebar-menu tree" data-widget="tree">
