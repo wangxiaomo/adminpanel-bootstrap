@@ -53,6 +53,7 @@ class AdminController extends Controller {
     }
 
     public function delete_user($id) {
-
+        $u = AdminUser::get($id);
+        $u->delete();
     }
 }
