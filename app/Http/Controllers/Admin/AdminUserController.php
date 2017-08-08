@@ -9,6 +9,7 @@ class AdminUserController extends Controller {
 
     public function __construct() {
         $this->middleware('need_admin_login');
+        $this->middleware('need_super_admin');
     }
 
     public function dashboard() {
