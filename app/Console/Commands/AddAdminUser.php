@@ -12,7 +12,7 @@ class AddAdminUser extends Command
      *
      * @var string
      */
-    protected $signature = 'add:admin_user {name} {email} {password} {admin_type}';
+    protected $signature = 'add:admin_user';
 
     /**
      * The console command description.
@@ -38,9 +38,21 @@ class AddAdminUser extends Command
      */
     public function handle()
     {
-        $args = $this->arguments();
-        $args['password'] = md5($args['password']);
-        dump($args);
-        $u = AdminUser::create($args);
+        $name = $this->ask('admin name?');
+        $email = $this->ask('email address?');
+        $password = $this->secret('admin password?');
+        $type = $this->ask('admin type[0,1,2]?');
+        $this->info('begin to add admin user');
+        $this->line("username: $name");
+        $this->line("email: $email");
+        $this->line("password: $password");
+        $this->line("admin type: $type");
+        if($this->confirm('Do you wish to CONTINUE???')){
+            $u = AdminUser::create([
+                'name'  =>  $name, 'email' => $email, 'password' => md5($password),
+                'admin_type'    =>  $type,
+            ]);
+            $this->info("Done!!!");
+        }
     }
 }
