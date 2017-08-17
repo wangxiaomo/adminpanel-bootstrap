@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="bower_components/AdminLTE/dist/css/skins/skin-blue.min.css">
   <link rel="stylesheet" href="bower_components/iCheck/skins/square/blue.css">
   <link rel="stylesheet" href="/bower_components/form.validation/dist/css/formValidation.min.css">
+  <style>
+.login-page { background:#3c8dbc; }
+.login-logo a { color:#fff; }
+.login-box-body { box-shadow:0 14px 24px 0 rgba(50,49,58,.25);border-radius:6px; }
+  </style>
 </head>
 <body class="hold-transition login-page">
   <div class="login-box">
