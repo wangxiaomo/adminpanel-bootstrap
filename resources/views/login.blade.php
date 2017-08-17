@@ -44,6 +44,12 @@
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
+          <div class="col-xs-7">
+            <input type="text" class="form-control" name="vcode" data-fv-notempty="true">
+          </div>
+          <div class="col-xs-5"><img src="{{ Captcha::src() }}" style="width:100%;"></div>
+        </div>
+        <div class="row" style="margin-top:10px;">
           <div class="col-xs-8">
             <div class="checkbox icheck">
               <label>
