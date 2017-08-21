@@ -12,7 +12,9 @@ return [
      |
      */
 
-    'enabled' => env('DEBUGBAR_ENABLED', null),
+    'load_debugbar' =>  env('LOAD_DEBUGBAR', true),
+    //'enabled' => env('DEBUGBAR_ENABLED', null),
+    'enabled'   =>  false,
 
     /*
      |--------------------------------------------------------------------------
