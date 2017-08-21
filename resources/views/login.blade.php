@@ -47,7 +47,7 @@
           <div class="col-xs-7">
             <input type="text" class="form-control" name="vcode" data-fv-notempty="true">
           </div>
-          <div class="col-xs-5"><img src="{{ Captcha::src() }}" style="width:100%;"></div>
+          <div class="col-xs-5"><img src="{{ Captcha::src() }}" style="width:100%;" onclick="this.src='/captcha/default?t='+ Math.random();"></div>
         </div>
         <div class="row" style="margin-top:10px;">
           <div class="col-xs-8">
