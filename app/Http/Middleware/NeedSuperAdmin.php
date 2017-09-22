@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\AdminUser;
+use App\Guards\AdminGuard;
 
 class NeedSuperAdmin
 {
@@ -16,7 +16,7 @@ class NeedSuperAdmin
      */
     public function handle($request, Closure $next)
     {
-        if($request->admin_user->admin_type == AdminUser::SUPER_ADMIN){
+        if(AdminGuard::is_superadmin($request->admin_user)){
             return $next($request);
         }
         abort(403);
