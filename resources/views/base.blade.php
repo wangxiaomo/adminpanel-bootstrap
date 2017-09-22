@@ -54,9 +54,9 @@
 
     <footer class="main-footer">
       <div class="pull-right hidden-xs">
-        Anything you want
+        落
       </div>
-      <strong>Copyright &copy; 2017 <a href="#">Company</a>.</strong> All rights reserved.
+      <strong>Copyright &copy; 2017 <a href="http://www.minmore.com">小众科技</a>.</strong> All rights reserved.
     </footer>
   </div>
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
