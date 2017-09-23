@@ -19,7 +19,7 @@ Route::group([
     'namespace' =>  'Admin',
     'prefix'    =>  'admin',
 ], function(){
-    Route::get('/login',  'LoginController@index');
+    Route::get('/login',  'LoginController@index')->name('admin.login');
     Route::post('/login', 'LoginController@login');
     Route::get('/logout', 'LogoutController');
     // admin dashboard
