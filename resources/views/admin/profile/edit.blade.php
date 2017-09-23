@@ -1,4 +1,4 @@
-@extends('base')
+@extends('admin.base')
 
 @section('page_title')
   修改个人信息

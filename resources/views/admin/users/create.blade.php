@@ -1,4 +1,4 @@
-@extends('base')
+@extends('admin.base')
 
 @section('page_title')
   新建管理员
