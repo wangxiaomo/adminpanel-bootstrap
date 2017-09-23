@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\AdminUser;
+use App\Http\Controllers\Controller;
 
 class LoginController extends Controller {
 
     public function index() {
-        return view('login');
+        return view('admin.login');
     }
 
     public function login() {
@@ -22,9 +23,9 @@ class LoginController extends Controller {
                 session(['admin_uid' => $user->id]);
                 return redirect('/admin');
             }
-            return redirect('/login')->with('msg', '账号或密码错误');
+            return redirect('/admin/login')->with('msg', '账号或密码错误');
         }else{
-            return redirect('/login')->with('msg', '验证码错误');
+            return redirect('/admin/login')->with('msg', '验证码错误');
         }
     }
 }

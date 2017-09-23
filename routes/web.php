@@ -15,14 +15,13 @@ Route::get('/', function() {
     return redirect('/admin');
 });
 
-Route::get('/login',  'LoginController@index');
-Route::post('/login', 'LoginController@login');
-Route::get('/logout', 'LogoutController');
-
 Route::group([
     'namespace' =>  'Admin',
     'prefix'    =>  'admin',
 ], function(){
+    Route::get('/login',  'LoginController@index');
+    Route::post('/login', 'LoginController@login');
+    Route::get('/logout', 'LogoutController');
     // admin dashboard
     Route::get('/', 'DashboardController');
 

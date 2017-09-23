@@ -21,6 +21,6 @@ class NeedAdminLogin
             $request->admin_user = AdminUser::get($admin_uid);
             return $next($request);
         }
-        return redirect('/login');
+        return redirect('/admin/login');
     }
 }

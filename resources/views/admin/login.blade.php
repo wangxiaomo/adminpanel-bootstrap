@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>登录 - Admin</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="bower_components/AdminLTE/dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="bower_components/AdminLTE/dist/css/skins/skin-blue.min.css">
-  <link rel="stylesheet" href="bower_components/iCheck/skins/square/blue.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="/bower_components/iCheck/skins/square/blue.css">
   <link rel="stylesheet" href="/bower_components/form.validation/dist/css/formValidation.min.css">
   <style>
 .login-page { background:#3c8dbc; }
@@ -65,10 +65,10 @@
     </div>
   </div>
 
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
-  <script src="js/adminlte.min.js"></script>
-  <script src="bower_components/iCheck/icheck.min.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/js/adminlte.min.js"></script>
+  <script src="/bower_components/iCheck/icheck.min.js"></script>
   <script src="/bower_components/form.validation/dist/js/formValidation.min.js"></script>
   <script src="/bower_components/form.validation/dist/js/framework/bootstrap.min.js"></script>
   <script src="/js/i18n.min.js"></script>
