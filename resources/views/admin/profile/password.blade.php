@@ -9,7 +9,7 @@
 @endsection
 
 @section('sidebar')
-  @include('admin.sidebar', ['active' => 'profile-password'])
+  @include('admin.sidebar', ['active' => 'profile.password'])
 @endsection
 
 @section('content')

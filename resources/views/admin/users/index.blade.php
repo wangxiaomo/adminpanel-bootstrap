@@ -9,7 +9,7 @@
 @endsection
 
 @section('sidebar')
-  @include('admin.sidebar', ['active' => 'users-index'])
+  @include('admin.sidebar', ['active' => 'admin_users.index'])
 @endsection
 
 @section('content')

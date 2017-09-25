@@ -9,7 +9,7 @@
 @endsection
 
 @section('sidebar')
-  @include('admin.sidebar', ['active' => 'profile-edit'])
+  @include('admin.sidebar', ['active' => 'profile.edit'])
 @endsection
 
 @section('content')
