@@ -25,4 +25,11 @@ class User extends Model {
         ]);
         return $u;
     }
+
+    public function status() {
+        switch($this->status) {
+            case 0: return '未审核';
+            case 1: return '审核通过';
+        }
+    }
 }

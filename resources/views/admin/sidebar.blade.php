@@ -16,8 +16,14 @@
           <li class="{{ $item == 'create'?'active':'' }}"><a href="/admin/users/create"><i class="fa fa-circle-o"></i>新建管理员</a></li>
         </ul>
       </li>
+      <li class="treeview {{ $parent == 'ants'?'active':'' }}">
+        <a href="#"><i class="fa fa-user"></i><span>用户管理</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu" style="{{ $parent == 'ants'? '':'display:none' }}">
+          <li class="{{ $item == 'index'?'active':'' }}"><a href="/admin/ants"><i class="fa fa-circle-o"></i>用户列表</a></li>
+        </ul>
+      </li>
       <li class="treeview {{ $parent == 'profile'?'active':'' }}">
-        <a href="#"><i class="fa fa-user-o"></i><span>账号信息</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <a href="#"><i class="fa fa-vcard"></i><span>账号信息</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
         <ul class="treeview-menu" style="{{ $parent == 'profile'? '':'display:none' }}">
           <li class="{{ $item == 'edit'?'active':'' }}"><a href="/admin/profile/edit"><i class="fa fa-circle-o"></i>修改个人信息</a></li>
           <li class="{{ $item == 'password'?'active':'' }}"><a href="/admin/profile/password"><i class="fa fa-circle-o"></i>修改密码</a></li>
@@ -30,7 +36,7 @@
     <ul class="sidebar-menu tree" data-widget="tree">
       <li class="{{ $parent == 'dashboard'?'active':'' }}"><a href="/admin"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
       <li class="treeview {{ $parent == 'profile'?'active':'' }}">
-        <a href="#"><i class="fa fa-user-o"></i><span>账号信息</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <a href="#"><i class="fa fa-vcard"></i><span>账号信息</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
         <ul class="treeview-menu" style="{{ $parent == 'profile'? '':'display:none' }}">
           <li class="{{ $item == 'edit'?'active':'' }}"><a href="/admin/profile/edit"><i class="fa fa-circle-o"></i>修改个人信息</a></li>
           <li class="{{ $item == 'password'?'active':'' }}"><a href="/admin/profile/password"><i class="fa fa-circle-o"></i>修改密码</a></li>
