@@ -42,7 +42,7 @@
           </div>
           <div class="input-group input-group-sm" style="width:150px;">
             <input type="text" name="q" class="form-control pull-right" placeholder="Search" />
-            <div class="input-group-btn"><button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div>
+            <div class="input-group-btn"><button class="btn btn-default btn-search"><i class="fa fa-search"></i></button></div>
           </div>
         </div>
       </div>
@@ -83,4 +83,20 @@
       </div>
     </div>
   </section>
+@endsection
+
+@section('page_script')
+  <script>
+$(function(){
+  var searchRedirect = function() {
+    var q = $('input[name=q]').val(),
+        url = '/admin/ants/q/' + q + window.location.search;
+    window.location = url;
+  }
+  $('.btn-search').on('click', searchRedirect)
+  $('input[name=q]').on('keypress', function(e){
+    if(e.keyCode == 13) searchRedirect();
+  })
+})
+  </script>
 @endsection

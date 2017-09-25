@@ -37,6 +37,7 @@ Route::group([
 
     // user ants
     Route::get('/ants', 'AntUserController@users');
+    Route::get('/ants/q/{query}', 'AntUserController@query');
 
     // admin profile
     Route::any('/profile/edit', 'ProfileController@edit');
