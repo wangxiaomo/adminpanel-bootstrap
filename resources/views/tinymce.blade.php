@@ -7,9 +7,12 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
 <body>
-  <input type="file">
-  Edit Below
-  <textarea>点击进入编辑模式</textarea>
+  <form method="POST">
+    {{ csrf_field() }}
+    Edit Below
+    <textarea name="content">点击进入编辑模式</textarea>
+    <button id="submit">提交</button>
+  </form>
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/tinymce/tinymce.hack.min.js"></script>
   <script src="/js/tinymce.zh_CN.js"></script>
@@ -39,6 +42,13 @@ $(function(){
         }
       });
     }
+  })
+
+  $('#submit').on('click', function(e){
+    e.stopPropagation();
+    tinymce.activeEditor.uploadImages(function(){
+      $('form').submit();
+    });
   })
 })
   </script>

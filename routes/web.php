@@ -14,6 +14,10 @@
 Route::get('/', function() {
     return view('tinymce');
 });
+Route::post('/', function(){
+    $content = request()->input('content');
+    return $content;
+});
 
 Route::group([
     'namespace' =>  'Admin',
