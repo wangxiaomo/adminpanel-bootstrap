@@ -50,14 +50,7 @@
           <div class="col-xs-5"><img src="{{ Captcha::src() }}" style="width:100%;" onclick="this.src='/captcha/default?t='+ Math.random();"></div>
         </div>
         <div class="row" style="margin-top:10px;">
-          <div class="col-xs-8">
-            <div class="checkbox icheck">
-              <label>
-                <input type="checkbox"> 记住我?
-              </label>
-            </div>
-          </div>
-          <div class="col-xs-4">
+          <div class="col-xs-4 col-xs-offset-8">
             <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
           </div>
         </div>
