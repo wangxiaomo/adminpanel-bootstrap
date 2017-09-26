@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use App\Models\UserScoreLog;
+
 class User extends Model {
 
     use SoftDeletes;
@@ -31,5 +33,12 @@ class User extends Model {
             case 0: return '未审核';
             case 1: return '审核通过';
         }
+    }
+
+    public function update_score($step, $event='') {
+        UserScoreLog::add($this->id, $event, $step);
+        $this->score += intval($step);
+        $this->save();
+        return $this->score;
     }
 }
