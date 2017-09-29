@@ -50,7 +50,7 @@ class AdminUserController extends Controller {
     }
 
     public function delete_user($id) {
-        $u = AdminUser::get($id);
+        $u = AdminUser::findOrFail($id);
         $u->delete();
     }
 }

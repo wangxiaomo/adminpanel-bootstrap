@@ -35,7 +35,7 @@
               </a>
             </li>
             <li class="messages-menu">
-              <a href="/logout">
+              <a href="{{ route('admin.logout') }}">
                 <i class="fa fa-lock"></i>注销登录
               </a>
             </li>
