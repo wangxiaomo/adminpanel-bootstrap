@@ -20,6 +20,8 @@
 $(function(){
   tinymce.init({
     selector: 'textarea',
+    convert_urls: false,
+    images_upload_base_path: '/',
     images_upload_url: '/api/tinymce/upload',
     menubar: false,
     plugins: [
@@ -28,20 +30,6 @@ $(function(){
       'insertdatetime media table contextmenu paste code'
     ],
     toolbar: 'insert | undo redo |  styleselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code',
-    init_instance_callback: function(editor){
-      editor.on('focus', function(e) {
-        var text = editor.getContent();
-        if(text == '<p>点击进入编辑模式</p>'){
-          editor.setContent('');
-        }
-      });
-      editor.on('blur', function(e) {
-        var text = editor.getContent();
-        if(!text){
-          editor.setContent('点击进入编辑模式');
-        }
-      });
-    }
   })
 
   $('#submit').on('click', function(e){
