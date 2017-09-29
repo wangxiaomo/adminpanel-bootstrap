@@ -30,7 +30,7 @@
           <ul class="nav navbar-nav">
             <li class="user user-menu">
               <a href="#">
-                <img src="/u.jpg" class="user-image" alt="User Image">
+                <img src="/images/admin/u.jpg" class="user-image" alt="User Image">
                 <span class="hidden-xs">{{ request()->admin_user->name }}</span>
               </a>
             </li>
