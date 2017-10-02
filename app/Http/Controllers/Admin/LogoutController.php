@@ -8,6 +8,6 @@ class LogoutController extends Controller {
 
     public function __invoke() {
         request()->session()->forget('admin_uid');
-        return redirect('/admin/login');
+        return redirect()->route('admin.login');
     }
 }
