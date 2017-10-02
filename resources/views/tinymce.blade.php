@@ -27,9 +27,9 @@ $(function(){
     plugins: [
       'advlist autolink lists link image charmap print preview anchor textcolor',
       'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table contextmenu paste code'
+      'insertdatetime media table contextmenu paste code autosave'
     ],
-    toolbar: 'insert | undo redo |  styleselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code',
+    toolbar: 'insert | undo redo |  styleselect | bold italic backcolor fontsizeselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code fullscreen',
   })
 
   $('#submit').on('click', function(e){
