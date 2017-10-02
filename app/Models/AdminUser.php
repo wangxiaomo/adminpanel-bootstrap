@@ -21,11 +21,6 @@ class AdminUser extends Model {
         return $u;
     }
 
-    public static function get($id) {
-        $u = AdminUser::find($id);
-        return $u;
-    }
-
     public function role() {
         switch($this->admin_type) {
             case AdminUser::SUPER_ADMIN: return '超级管理员';

@@ -18,7 +18,7 @@ class NeedAdminLogin
     {
         $admin_uid = session('admin_uid');
         if($admin_uid) {
-            $request->admin_user = AdminUser::get($admin_uid);
+            $request->admin_user = AdminUser::findOrFail($admin_uid);
             return $next($request);
         }
         return redirect()->route('admin.login');
