@@ -16,18 +16,25 @@ class UserScoreUpdateEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $user, $event, $step;
+    const SAMPLE_EVENT = 1;
+
+    public $user, $event;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(User $user, $event, $step)
+    public function __construct(User $user, $event)
     {
         $this->user = $user;
         $this->event = $event;
-        $this->step = $step;
+    }
+
+    public static function get_event_step($event) {
+        switch($event){
+            case UserScoreUpdateEvent::SAMPLE_EVENT: return 1;
+        }
     }
 
     /**

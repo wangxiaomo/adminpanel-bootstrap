@@ -27,6 +27,7 @@ class UserScoreUpdateEventListener
     public function handle(UserScoreUpdateEvent $event)
     {
         $user = $event->user;
-        $user->update_score($event->step, $event->event);
+        $step = UserScoreUpdateEvent::get_event_step($event->event);
+        $user->update_score($step, $event->event);
     }
 }
