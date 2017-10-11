@@ -10,8 +10,6 @@ class AdminUser extends Model {
     use SoftDeletes;
 
     const SUPER_ADMIN = 0;
-    const SUPERVISOR  = 1;
-    const WORKER = 2;
 
     protected $fillable = ['name', 'email', 'password', 'admin_type'];
     protected $dates = ['deleted_at'];
@@ -24,8 +22,6 @@ class AdminUser extends Model {
     public function role() {
         switch($this->admin_type) {
             case AdminUser::SUPER_ADMIN: return '超级管理员';
-            case AdminUser::SUPERVISOR:  return '审核人员';
-            case AdminUser::WORKER:      return '操作员';
         }
     }
 

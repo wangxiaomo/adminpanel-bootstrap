@@ -12,7 +12,6 @@ class LoginController extends Controller {
             $email = request('email');
             $password = request('password');
             $vcode = request('vcode');
-            $admin_type = request('hack_type', AdminUser::SUPER_ADMIN);
 
             if(\Captcha::check($vcode)){
                 $user = AdminUser::login($email, $password);
@@ -20,9 +19,9 @@ class LoginController extends Controller {
                     session(['admin_uid' => $user->id]);
                     return redirect('/admin');
                 }
-                return redirect('/admin/login')->with('msg', '账号或密码错误');
+                return redirect()->route('admin.login')->with('msg', '账号或密码错误');
             }else{
-                return redirect('/admin/login')->with('msg', '验证码错误');
+                return redirect()->route('admin.login')->with('msg', '验证码错误');
             }
         }else{
             return view('admin.login');

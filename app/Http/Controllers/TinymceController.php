@@ -11,7 +11,6 @@ class TinymceController extends Controller {
         $accepted_origins = [
             "http://localhost",
             "http://127.0.0.1",
-            "http://5th.minmore.com",
         ];
         // verify origin
         $origin = request()->server('HTTP_ORIGIN');
