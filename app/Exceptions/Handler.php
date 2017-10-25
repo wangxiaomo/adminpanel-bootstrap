@@ -48,10 +48,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        // turn on laravel debugbar
-        if(env('APP_DEBUG')){
-            \Debugbar::enable();
-        }
         return parent::render($request, $exception);
     }
 
